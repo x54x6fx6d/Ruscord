@@ -1,3 +1,5 @@
+use std::{thread, time};
+
 use crate::ruscord::status::Status;
 
 pub struct Client {
@@ -16,7 +18,14 @@ impl Client {
 
     // Message Actions
 
-    pub fn send_message(&self, guild_id: u32) ->  Status {
-        return Status { Code: 200 };
+    pub fn send_message(&self, channel_id: u32, message_content: String) {
+        let c = reqwest::Client::new();
+        let res = c.post("https://")
+    }
+
+    pub fn login(&self, delay: u64) {
+        let dur = time::Duration::from_secs(delay);
+        thread::sleep(dur);
+        println!("Slept for {} seconds!", delay);
     }
 }

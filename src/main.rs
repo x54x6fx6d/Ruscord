@@ -8,4 +8,5 @@ fn main(){
         token: String::from("paksdpoaksdpoaksdpokas"),
         max_shards: 10
     };
+    c.login(2);
 }
